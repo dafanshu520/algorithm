@@ -1,7 +1,6 @@
 20. 有效的括号
 https://leetcode-cn.com/problems/valid-parentheses/
 
-```
 func isValid(s string) bool {
     n := len(s)
     if n % 2 == 1 {
@@ -25,4 +24,3 @@ func isValid(s string) bool {
     }
     return len(stack) == 0
 }
-```
