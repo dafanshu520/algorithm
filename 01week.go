@@ -41,3 +41,23 @@ func climbStairs(n int) int {
     }
     return f2
 }
+
+// 11. 盛最多水的容器
+// https://leetcode-cn.com/problems/container-with-most-water/
+func maxArea(height []int) int {
+    max := 0
+    for i, j := 0, len(height) - 1; i < j; {
+        minHeight := height[i] 
+        if minHeight > height[j] {
+            minHeight = height[j]
+            j = j - 1
+        } else {
+            i = i + 1
+        }
+        area := (j-i+1)*minHeight
+        if max < area {
+            max = area
+        }
+    }
+    return max
+}
